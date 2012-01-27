@@ -1,7 +1,10 @@
 {
-  "name": "Responsive-UPC",
+  "name": "UPC Today",
   "version": "0.0.1",
   "dependencies": {
-    "express": "2.4.6"
-  }
+		"express": "2.4.6"
+	,	"node-uuid": "1.2.0"
+	,	"socket.io": "0.8.4"
+	,	"jade": "0.15.4"  
+	}
 }
