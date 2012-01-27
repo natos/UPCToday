@@ -428,17 +428,24 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
     ALL: Now and Next
    =================== */
 
-#now, #next {
-	font-size: .8em;
+.detailed-list {
 	margin: 0;
 	padding: 0;
-	list-style: none;
-	width: 50%;
-	float: left;
+	background: rgb(204,204,204);
+	background: -moz-linear-gradient(top, rgba(204,204,204,1) 0%, rgba(238,238,238,1) 50%, rgba(238,238,238,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,1)), color-stop(50%,rgba(238,238,238,1)), color-stop(100%,rgba(238,238,238,1)));
+	background: -webkit-linear-gradient(top, rgba(204,204,204,1) 0%,rgba(238,238,238,1) 50%,rgba(238,238,238,1) 100%);
 }
 
-#now p, #next p {
-	line-height: normal;	
+.detailed-list dt {
+	position: absolute;
+	margin: 0 15px;
+	padding: 10px 0;
+}
+
+.detailed-list dd {
+	margin: 0 0 5px 70px;
+	padding: 10px 0;
 }
 
 /* ===============
