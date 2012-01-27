@@ -25,7 +25,7 @@ function(AppRouter) {
 
 			// Global event dispatcher/handler initialization
 			upc.event = _.extend({}, Backbone.Events);
-			// Normalize interfaces
+			// Normalize interfaces, just asthetics
 			upc.event.on = upc.event.bind;
 			upc.event.emit = upc.event.trigger;
 
@@ -41,9 +41,6 @@ function(AppRouter) {
 			Backbone.emulateHTTP = true;
 			Backbone.emulateJSON = true;
 			Backbone.history.start();
-
-			// Show menu
-			$('#main-nav').removeClass('off');
 
 			return this;
 

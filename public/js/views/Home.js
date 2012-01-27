@@ -18,9 +18,6 @@ function() {
 
 			this.render();
 
-			// hide back button
-			$('.back.button').hide();
-
 			// set title
 			$('#header-container h1').html('UPC Today');
 
@@ -34,6 +31,9 @@ function() {
 
 			this.trigger('view-created', this);
 
+			// hide back button
+			$('.back.button').addClass('off');
+
 			return this;
 
 		}
@@ -42,10 +42,10 @@ function() {
 
 			this.el.html( '' );
 
-			this.el.trigger('view-unloaded', this);
+			this.trigger('view-unloaded', this);
 
 			// show back button
-			$('.back.button').show();
+			$('.back.button').removeClass('off');
 
 			return this;
 		}

@@ -1,4 +1,4 @@
-// OnDemand.js
+// WatchNow.js
 
 define([
 
@@ -10,7 +10,7 @@ function() {
 
 		el: $('#main')
 
-,		template: _.template( $('#ondemand-template').html() )
+,		template: _.template( $('#watchnow-template').html() )
 
 ,		initialize: function() {
 
@@ -21,7 +21,7 @@ function() {
 			this.render();
 
 			// set title
-			$('#header-container h1').html('On Demand');
+			$('#header-container h1').html('Watch Now');
 
 			return this;
 
@@ -35,6 +35,9 @@ function() {
 
 			this.iscroll = new iScroll('inner-content');
 
+			// hide main nav
+			upc.mainNav.unload();
+
 			return this;
 
 		}
@@ -46,6 +49,9 @@ function() {
 			this.el.html( '' );
 
 			this.trigger('view-unloaded', this);
+
+			// show main nav
+			upc.mainNav.render();
 
 			return this;
 		}

@@ -1,4 +1,4 @@
-// TVGuide.js
+// MainNav.js
 
 define([
 
@@ -8,20 +8,13 @@ function() {
 
 	return Backbone.View.extend({
 
-		el: $('#main')
+		el: $('#main-nav')
 
-,		template: _.template( $('#tvguide-template').html() )
+,		main: $('#main-container')
 
 ,		initialize: function() {
 
-			var self = this;
-
 			this.trigger('view-initialized', this);
-
-			this.render();
-
-			// set title
-			$('#header-container h1').html('TV Guide');
 
 			return this;
 
@@ -29,9 +22,11 @@ function() {
 
 ,		render: function() {
 
-			this.el.html( this.template() );
+			this.el.removeClass('off');
 
-			this.trigger('view-created', this);
+			this.main.removeClass('maximize');
+
+			this.trigger('view-rendered', this);
 
 			return this;
 
@@ -39,7 +34,9 @@ function() {
 
 ,		unload: function() {
 
-			this.el.html( '' );
+			this.el.addClass('off');
+
+			this.main.addClass('maximize');
 
 			this.trigger('view-unloaded', this);
 

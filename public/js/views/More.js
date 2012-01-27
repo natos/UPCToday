@@ -41,7 +41,7 @@ function() {
 
 			this.el.html( '' );
 
-			this.el.trigger('view-unloaded', this);
+			this.trigger('view-unloaded', this);
 
 			return this;
 		}

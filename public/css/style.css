@@ -96,6 +96,10 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 }
 
 #header-container { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 	color: #fff; 
 	margin: 20px auto;
 	height: 50px;
@@ -107,6 +111,12 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 			color-stop(0.5, #000000)); 
 	border-top: 1px solid #858585;
 	border-bottom: 1px solid #858585; 
+
+	-webkit-transition: top ease .5s;
+}
+
+#header-container.off {
+	top: -70px;	
 }
 
 /* ==============
@@ -125,7 +135,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(85,85,85,1)), color-stop(100%,rgba(17,17,17,1)));
 	background: -webkit-linear-gradient(top, rgba(85,85,85,1) 0%,rgba(17,17,17,1) 100%);
 
-	-webkit-transition: bottom ease 1s;
+	-webkit-transition: bottom ease .5s;
 }
 
 #main-nav a {
@@ -238,7 +248,10 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 
 			top: 2.35px;
 		}
-		
+	
+		.button.bordered.back.off {
+			display: none;
+		}
 		/* End Back Bordered Button Styles */
 
 /* ==============
@@ -258,6 +271,12 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	background: -moz-linear-gradient(top, rgba(68,68,68,1) 0%, rgba(51,51,51,1) 19%, rgba(0,0,0,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(68,68,68,1)), color-stop(19%,rgba(51,51,51,1)), color-stop(100%,rgba(0,0,0,1)));
 	background: -webkit-linear-gradient(top, rgba(68,68,68,1) 0%,rgba(51,51,51,1) 19%,rgba(0,0,0,1) 100%);
+
+	-webkit-transition: all ease .5s;
+}
+
+#main-container.maximize {
+	bottom: 0;
 }
 
 #main {
@@ -341,7 +360,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 }
 
 /* ==============
-    On Demand
+    inner nav
    ============== */
 
 #inner-nav {
@@ -400,6 +419,13 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	width: 102px;
 }
 
+#inner-nav input[type="search"] {
+	margin: 10px;
+	width: 280px;
+	height: 22px;
+	border-radius: 10px;
+}
+
 #inner-content {
 	background-color: #ccc;
 	position: absolute;
@@ -409,6 +435,11 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	left: 0;
 	z-index: 5;
 }
+
+
+/* ==============
+    On demand
+   ============== */
 
 .list {
 	margin: 0;
@@ -430,7 +461,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 
 
 /* ===================
-    ALL: Now and Next
+    Now and Next
    =================== */
 
 .detailed-list {
@@ -451,6 +482,57 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 .detailed-list dd {
 	margin: 0 0 5px 70px;
 	padding: 10px 0;
+}
+
+/* ===================
+    Watch Now
+   =================== */
+
+.mosaic {
+	margin: 0;
+	padding: 0;	
+}
+
+.mosaic li {
+	vertical-align: middle;
+	list-style: none;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin: 0;
+	padding: 15px 0 0 0;
+	width: 33.1%;
+	height: 90px;
+	float: left;
+	font-size: 0.8em;
+	line-height: 1.2em;
+	text-align: center;
+	position: relative;
+
+	background: rgb(204,204,204);
+	background: -moz-linear-gradient(top, rgba(204,204,204,1) 0%, rgba(238,238,238,1) 50%, rgba(238,238,238,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(204,204,204,1)), color-stop(50%,rgba(238,238,238,1)), color-stop(100%,rgba(238,238,238,1)));
+	background: -webkit-linear-gradient(top, rgba(204,204,204,1) 0%,rgba(238,238,238,1) 50%,rgba(238,238,238,1) 100%);
+}
+
+.mosaic li .nro {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	color: #666;
+}
+
+.mosaic li:hover {
+	color: #eee;
+	background: #0082E5;
+
+	background: rgb(153,204,255);
+	background: -moz-linear-gradient(top, rgba(153,204,255,1) 0%, rgba(111,179,247,1) 23%, rgba(26,131,237,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(153,204,255,1)), color-stop(23%,rgba(111,179,247,1)), color-stop(100%,rgba(26,131,237,1)));
+	background: -webkit-linear-gradient(top, rgba(153,204,255,1) 0%,rgba(111,179,247,1) 23%,rgba(26,131,237,1) 100%);
+}
+
+.mosaic li:hover .nro {
+	color: #fff;
 }
 
 /* ===============

@@ -3,22 +3,28 @@
 define([
 
 	'views/Home'
+,	'views/MainNav'
 ,	'views/TVGuide'
 ,	'views/NowAndNext'
 ,	'views/OnDemand'
 ,	'views/CatchUp'
+,	'views/WatchNow'
 ,	'views/More'
 
 ],
 
-function(HomeView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, MoreView) {
+function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, WatchNowView, MoreView) {
 
 	return Backbone.Router.extend({
 
 		initialize: function() {
-			$('.back.button').click(function(event){
-				history.go(-1);
-			});
+			// Header
+			$('#header-container').removeClass('off');
+			// Main Nav
+			upc.mainNav = new MainNavView();
+			upc.mainNav.render();
+			// Back button behavior
+			$('.back.button').click(function(event){ history.go(-1); });
 		}
 
 		// To know which view is the current
@@ -32,6 +38,7 @@ function(HomeView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, MoreVi
 		,	"catchup"		: "catchup"
 		,	"nowandnext"	: "nowandnext"
 		,	"tvguide"		: "tvguide"
+		,	"watchnow"		: "watchnow"
 		,	"more" 			: "more"
 		}
 
@@ -58,6 +65,11 @@ function(HomeView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, MoreVi
 ,		tvguide: function() {
 			this.load(TVGuideView);
 			$('a[href="#tvguide"]').addClass('selected');
+		}
+
+,		watchnow: function() {
+			this.load(WatchNowView);
+			$('a[href="#watchnow"]').addClass('selected');
 		}
 
 ,		more: function() {
