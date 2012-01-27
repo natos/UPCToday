@@ -4,13 +4,14 @@ define([
 
 	'views/Home'
 ,	'views/TVGuide'
+,	'views/NowAndNext'
 ,	'views/OnDemand'
 ,	'views/CatchUp'
 ,	'views/More'
 
 ],
 
-function(HomeView, TVGuideView, OnDemanView, CatchUpView, MoreView) {
+function(HomeView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, MoreView) {
 
 	return Backbone.Router.extend({
 
@@ -29,6 +30,7 @@ function(HomeView, TVGuideView, OnDemanView, CatchUpView, MoreView) {
 			"home"			: "home"
 		,	"ondemand"		: "ondemand"
 		,	"catchup"		: "catchup"
+		,	"nowandnext"	: "nowandnext"
 		,	"tvguide"		: "tvguide"
 		,	"more" 			: "more"
 		}
@@ -46,6 +48,11 @@ function(HomeView, TVGuideView, OnDemanView, CatchUpView, MoreView) {
 ,		catchup: function() {
 			this.load(CatchUpView);
 			$('a[href="#catchup"]').addClass('selected');
+		}
+
+,		nowandnext: function() {
+			this.load(NowAndNextView);
+			$('a[href="#nowandnext"]').addClass('selected');
 		}
 
 ,		tvguide: function() {

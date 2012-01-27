@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Responsive UPC</title>
+	<title>UPC Today</title>
 	<meta name="description" content="Example of responsive web implementation">
 	<meta name="author" content="Natan Santolo">
 
@@ -15,7 +15,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 
-	<link rel="apple-touch-icon" href="includes/icon.png" />
+	<link rel="apple-touch-icon" href="assets/icon.png" />
 
 	<link rel="icon" href="assets/favicon.ico" sizes="32x32">
 	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
@@ -42,7 +42,7 @@
 			<nav id="main-nav">
 				<ul>
 					<li><a href="#home">Home</a></li>
-					<li><a href="#tvguide">TV Guide</a></li>
+					<li><a href="#nowandnext">TV Guide</a></li>
 					<li><a href="#ondemand">On Demand</a></li>
 					<li><a href="#catchup">Catch Up</a></li>
 					<li><a href="#more">More</a></li>
@@ -51,7 +51,8 @@
 		</header>
 	</div>
 	<div id="main-container" class="clearfix">
-		<div id="main" class="wrapper clearfix">						
+		<div id="main" class="wrapper clearfix">
+			<img src="assets/loadergray.gif" />					
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
 
@@ -72,8 +73,33 @@
 		</div>
 	</script>
 
+
+	<script type="text/template" id="nowandnext-template">
+		<!--h1>Now And Next</h1-->
+		<nav id="inner-nav">
+			<a href="#tvguide">Go to TV Guide</a>
+			<a href="#search">search</a>
+		</nav>
+
+		<div id="inner-content">
+			<dl class="list">
+				<dt>10.05</dt>
+			</ul>
+		</div>
+	</script>
+
 	<script type="text/template" id="tvguide-template">
-		<h1>TV Guide</h1>
+		<!--h1>TV Guide</h1-->
+		<nav id="inner-nav">
+			<a href="#list">List</a>
+			<a href="#search">search</a>
+		</nav>
+
+		<div id="inner-content">
+			<ul class="list">
+				<li>Gelaarsde Kat 3D, De</li>
+			</ul>
+		</div>
 	</script>
 
 	<script type="text/template" id="catchup-template">
@@ -82,12 +108,12 @@
 
 	<script type="text/template" id="ondemand-template">
 		<!--h1>On Demand</h1-->
-		<nav id="ondemand-nav">
+		<nav id="inner-nav">
 			<a href="#list">List</a>
 			<a href="#search">search</a>
 		</nav>
 
-		<div id="ondemand-scroll">
+		<div id="inner-content">
 			<ul class="list">
 				<li>Gelaarsde Kat 3D, De</li>
 				<li>New Kids Nitro</li>

@@ -154,6 +154,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(153,204,255,1)), color-stop(23%,rgba(111,179,247,1)), color-stop(100%,rgba(26,131,237,1)));
 	background: -webkit-linear-gradient(top, rgba(153,204,255,1) 0%,rgba(111,179,247,1) 23%,rgba(26,131,237,1) 100%);
 
+	-webkit-box-shadow: 0px 1px 2px 1px #5AD6FC;
 }
 
 /* ==============
@@ -338,7 +339,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
     On Demand
    ============== */
 
-#ondemand-nav {
+#inner-nav {
 	position: absolute;
 	height: 50px;
 	width: 100%;
@@ -352,7 +353,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	background: -webkit-linear-gradient(top, rgba(204,204,204,1) 0%,rgba(170,170,170,1) 100%);
 }
 
-#ondemand-nav a {
+#inner-nav a {
 
 	display: block;
 	position: absolute;
@@ -372,18 +373,29 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	background: -moz-linear-gradient(top, rgba(170,170,170,1) 0%, rgba(102,102,102,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(170,170,170,1)), color-stop(100%,rgba(102,102,102,1)));
 	background: -webkit-linear-gradient(top, rgba(170,170,170,1) 0%,rgba(102,102,102,1) 100%);
-	
+
+	-webkit-box-shadow: inset 0px 1px 1px 0px #666;
 }
 
-#ondemand-nav a[href="#list"] {
+#inner-nav a:hover {
+	-webkit-box-shadow: inset 0px 1px 1px 0px #555	;
+}
+
+#inner-nav a[href="#list"] {
 	left: 10px;
+	text-indent: 14px;
 }
 
-#ondemand-nav a[href="#search"] {
+#inner-nav a[href="#search"] {
 	right: 10px;
 }
 
-#ondemand-scroll {
+#inner-nav a[href="#tvguide"] {
+	left: 10px;
+	width: 102px;
+}
+
+#inner-content {
 	background-color: #ccc;
 	position: absolute;
 	top: 50px;

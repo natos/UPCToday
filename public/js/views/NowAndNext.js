@@ -1,4 +1,4 @@
-// OnDemand.js
+// NowAndNext.js
 
 define([
 
@@ -10,7 +10,7 @@ function() {
 
 		el: $('#main')
 
-,		template: _.template( $('#ondemand-template').html() )
+,		template: _.template( $('#nowandnext-template').html() )
 
 ,		initialize: function() {
 
@@ -21,7 +21,7 @@ function() {
 			this.render();
 
 			// set title
-			$('#header-container h1').html('On Demand');
+			$('#header-container h1').html('Now & Next');
 
 			return this;
 
