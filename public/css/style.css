@@ -563,22 +563,16 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
    ==================== */
 
 	nav a{
-		float:left;
-		width:27%;
-		margin:0 1.7%;
-		padding:25px 2%;
-		margin-bottom:0;
+
 	}
 	
-	nav li:first-child a{ margin-left:0;  }
-	nav li:last-child  a{ margin-right:0; }
 	
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
 
-	nav ul li{
-		display:inline;
+	nav ul li {
+
 	}	
 	.oldie nav a{
 		margin:0 0.7%;		
@@ -589,14 +583,13 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 
 /* ====================
     WIDE: CSS3 Effects
-   ==================== */
+   ==================== 
 
-	#header-container,
-	#main aside{
+	#header-container {
 		-webkit-box-shadow:0 5px 10px #aaa;
 		   -moz-box-shadow:0 5px 10px #aaa;
 		        box-shadow:0 5px 10px #aaa;
-	}
+	}*/
 
 /* ============
     WIDE: Menu
@@ -606,24 +599,33 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 		float:left;
 	}
 
-	nav{
-		float:right;
-		width:38%;
+	#header-container {
+		top: 0;
+		-webkit-transition: none;
+		margin: 0;
+	}
+
+	#main-nav {
+		top: 50px;
+		z-index: 0;
+		bottom: auto;
+	}
+
+	#main-nav a {
+		height: auto;
+		width: 23%;
+
+		padding: 10px;
+	}
+
+	#main-container {
+		top: 100px;
 	}
 
 /* ============
     WIDE: Main
    ============ */
 
-	#main article{
-		float:left;
-		width:57%;
-	}
-		
-	#main aside{
-		float:right;
-		width:28%;
-	}
 }
 
 @media only screen and (min-width: 1140px) {
@@ -632,7 +634,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
     Maximal Width
    =============== */
 
-	.wrapper{
+	#main-container, #header-container, #main-nav{
 		width:1026px; /* 1140px - 10% for margins */
 		margin:0 auto;
 	}
