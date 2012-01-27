@@ -42,6 +42,9 @@ function(AppRouter) {
 			Backbone.emulateJSON = true;
 			Backbone.history.start();
 
+			// Show menu
+			$('#main-nav').removeClass('off');
+
 			return this;
 
 		}
