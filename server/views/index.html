@@ -1,0 +1,125 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Responsive UPC</title>
+	<meta name="description" content="Example of responsive web implementation">
+	<meta name="author" content="Natan Santolo">
+
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<link rel="apple-touch-icon" href="includes/icon.png" />
+
+	<link rel="icon" href="assets/favicon.ico" sizes="32x32">
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<div id="header-container">
+		<header class="wrapper clearfix">
+			<div id="logo">
+				<img src="assets/icon.png">
+			</div>
+
+			<div class="button bordered back">
+				<span class="pointer"></span>
+				<div class="content">
+					<span class="label">Back</span>
+				</div>
+			</div>
+
+			<h1>UPC Today</h1>
+			<nav id="main-nav">
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#tvguide">TV Guide</a></li>
+					<li><a href="#ondemand">On Demand</a></li>
+					<li><a href="#catchup">Catch Up</a></li>
+					<li><a href="#more">More</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<div id="main-container" class="clearfix">
+		<div id="main" class="wrapper clearfix">						
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
+
+	<script src="js/libs/jquery/jquery.js"></script>
+	<script src="js/libs/underscore/underscore.js"></script>
+	<script src="js/libs/backbone/backbone.js"></script>
+	<script src="js/libs/require/require.js" data-main="js/main"></script>
+
+	<script type="text/template" id="home-template">
+		<!--h1>Home</h1-->
+		<div id="damero">
+			<ul class="clearfix">
+				<li class="tl"><a href="#schedule">Schedule a recording</a></li>
+				<li class="tr"><a href="#watchnow">Now on your TV</a></li>
+				<li class="bl"><a href="#search">Search TV</a></li>
+				<li class="br"><a href="#werecommend">We recommend</a></li>
+			</ul>
+		</div>
+	</script>
+
+	<script type="text/template" id="tvguide-template">
+		<h1>TV Guide</h1>
+	</script>
+
+	<script type="text/template" id="catchup-template">
+		<h1>Catch Up</h1>
+	</script>
+
+	<script type="text/template" id="ondemand-template">
+		<!--h1>On Demand</h1-->
+		<nav id="ondemand-nav">
+			<a href="#list">List</a>
+			<a href="#search">search</a>
+		</nav>
+
+		<div id="ondemand-scroll">
+			<ul class="list">
+				<li>Gelaarsde Kat 3D, De</li>
+				<li>New Kids Nitro</li>
+				<li>Happy Feet 2 3D, NL</li>
+				<li>Het geheim van de Eenhoorn</li>
+				<li>Mission: Impossible - Ghost Protocol</li>
+				<li>Sherlock Holmes 2</li>
+				<li>Gelaarsde Kat 3D, De</li>
+				<li>New Kids Nitro</li>
+				<li>Happy Feet 2 3D, NL</li>
+				<li>Het geheim van de Eenhoorn</li>
+				<li>Mission: Impossible - Ghost Protocol</li>
+				<li>Sherlock Holmes 2</li>
+				<li>Gelaarsde Kat 3D, De</li>
+				<li>New Kids Nitro</li>
+				<li>Happy Feet 2 3D, NL</li>
+				<li>Het geheim van de Eenhoorn</li>
+				<li>Mission: Impossible - Ghost Protocol</li>
+				<li>Sherlock Holmes 2</li>
+				<li>Gelaarsde Kat 3D, De</li>
+				<li>New Kids Nitro</li>
+				<li>Happy Feet 2 3D, NL</li>
+				<li>Het geheim van de Eenhoorn</li>
+				<li>Mission: Impossible - Ghost Protocol</li>
+				<li>Sherlock Holmes 2</li>
+			</ul>
+		</div>
+	</script>
+
+	<script type="text/template" id="more-template">
+		<h1>More</h1>
+	</script>
+
+</body>
+</html>
