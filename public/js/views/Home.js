@@ -16,11 +16,6 @@ function() {
 
 			this.trigger('view-initialized', this);
 
-			this.render();
-
-			// set title
-			$('#header-container h1').html('UPC Today');
-
 			return this;
 
 		}
@@ -28,6 +23,9 @@ function() {
 ,		render: function() {
 
 			this.el.html( this.template() );
+
+			// set title
+			$('#header-container h1').html( this.el.find('h1').remove().html() );
 
 			this.trigger('view-created', this);
 

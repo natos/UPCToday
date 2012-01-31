@@ -10,14 +10,11 @@
 	<title>UPC Today</title>
 	<meta name="description" content="Example of responsive web implementation">
 	<meta name="author" content="Natan Santolo">
-
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-
-	<link rel="apple-touch-startup-image" href="startup.png"> 
-
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 
+	<link rel="apple-touch-startup-image" href="startup.png"> 
 	<link rel="apple-touch-icon" href="assets/icon.png" />
 
 	<link rel="icon" href="assets/favicon.ico" sizes="32x32">
@@ -41,18 +38,19 @@
 				</div>
 			</div>
 
-			<h1>UPC Today</h1>
+			<h1>Loading</h1>
 		</header>
 	</div>
-			<nav id="main-nav" class="off">
-				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#nowandnext">TV Guide</a></li>
-					<li><a href="#ondemand">On Demand</a></li>
-					<li><a href="#catchup">Catch Up</a></li>
-					<li><a href="#more">More</a></li>
-				</ul>
-			</nav>
+
+	<nav id="main-nav" class="off">
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#nowandnext">TV Guide</a></li>
+			<li><a href="#ondemand">On Demand</a></li>
+			<li><a href="#catchup">Catch Up</a></li>
+			<li><a href="#more">More</a></li>
+		</ul>
+	</nav>
 
 	<div id="main-container" class="clearfix">
 		<div id="main" class="wrapper clearfix">
@@ -66,182 +64,376 @@
 	<script src="js/libs/require/require.js" data-main="js/main"></script>
 
 	<script type="text/template" id="home-template">
-		<!--h1>Home</h1-->
-		<div id="damero">
-			<ul class="clearfix">
-				<li class="tl"><a href="#schedule">Schedule a recording</a></li>
-				<li class="tr"><a href="#watchnow">Now on your TV</a></li>
-				<li class="bl"><a href="#search">Search TV</a></li>
-				<li class="br"><a href="#werecommend">We recommend</a></li>
-			</ul>
+		<h1>UPC Today</h1>
+		<div class="scrollable">
+			<div id="damero">
+				<ul class="clearfix">
+					<li class="tl"><a href="#schedule">Schedule a recording</a></li>
+					<li class="tr"><a href="#watchnow">Now on your TV</a></li>
+					<li class="bl"><a href="#search">Search TV</a></li>
+					<li class="br"><a href="#werecommend">We recommend</a></li>
+				</ul>
+			</div>
 		</div>
 	</script>
 
 
 	<script type="text/template" id="watchnow-template">
-		<!--h1>Watch Now</h1-->
+		<h1>Watch Now</h1>
 		<nav id="inner-nav">
 			<input type="search" placeholder="Type channel name" />
 		</nav>
 
 		<div id="inner-content">
-			<div class="clearfix">
-			<ol class="mosaic">
-				<li><span class="nro">1</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">2</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">3</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">4</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">5</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">6</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">7</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">8</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">9</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">10</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">11</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">12</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">13</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">14</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">15</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">16</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">17</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">18</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">19</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">20</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">21</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">22</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">23</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">24</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">25</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">26</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">27</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">28</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">29</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">30</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">31</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">32</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">33</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">34</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
-				<li><span class="nro">35</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
-
-
-			</ol>
+			<div class="scrollable">
+				<ol class="mosaic clearfix">
+					<li><span class="nro">1</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">2</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">3</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">4</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">5</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">6</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">7</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">8</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">9</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">10</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">11</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">12</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">13</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">14</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">15</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">16</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">17</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">18</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">19</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">20</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">21</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">22</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">23</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">24</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">25</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">26</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">27</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">28</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">29</span><img src="assets/logos/ned1.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">30</span><img src="assets/logos/ned2.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">31</span><img src="assets/logos/ned3.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">32</span><img src="assets/logos/rtl4.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">33</span><img src="assets/logos/rtl5.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">34</span><img src="assets/logos/sbs6.gif" /><p>Program details Two lines</p></li>
+					<li><span class="nro">35</span><img src="assets/logos/veronica.gif" /><p>Program details Two lines</p></li>
+				</ol>
 			</div>
-		</ul>
+		</div>
 	</script>
 
 
 	<script type="text/template" id="nowandnext-template">
-		<!--h1>Now And Next</h1-->
+		<h1>Now And Next</h1>
 		<nav id="inner-nav">
 			<a href="#tvguide">Go to TV Guide</a>
 			<a href="#search">Search</a>
 		</nav>
 
 		<div id="inner-content">
-			<div>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/ned1.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/ned2.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/ned3.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/rtl4.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/rtl5.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/sbs6.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
-			<dl class="detailed-list">
-				<dt><img src="assets/logos/veronica.gif" /></dt>
-				<dd>10.05 Koffie Max</dd>
-				<dd>12.00 NOS Journaal</dd>
-				<dd>12.30 Schaatsen EK Allround</dd>
-			</dl>
+			<div class="scrollable">
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/ned1.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/ned2.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/ned3.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/rtl4.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/rtl5.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/sbs6.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
+				<dl class="detailed-list">
+					<dt><img src="assets/logos/veronica.gif" /></dt>
+					<dd>10.05 Koffie Max</dd>
+					<dd>12.00 NOS Journaal</dd>
+					<dd>12.30 Schaatsen EK Allround</dd>
+				</dl>
 			</div>
 		</div>
 	</script>
 
 	<script type="text/template" id="tvguide-template">
-		<!--h1>TV Guide</h1-->
+		<h1>TV Guide</h1>
 		<nav id="inner-nav">
 			<a href="#list">List</a>
 			<a href="#search">Search</a>
 		</nav>
 
 		<div id="inner-content">
-			<ul class="list">
-				<li>Gelaarsde Kat 3D, De</li>
-			</ul>
+			<div class="scrollable">
+				<ul class="list">
+					<li>Gelaarsde Kat 3D, De</li>
+				</ul>
+			</div>
 		</div>
 	</script>
 
 	<script type="text/template" id="catchup-template">
 		<h1>Catch Up</h1>
-	</script>
-
-	<script type="text/template" id="ondemand-template">
-		<!--h1>On Demand</h1-->
 		<nav id="inner-nav">
 			<a href="#list">List</a>
 			<a href="#search">Search</a>
 		</nav>
 
 		<div id="inner-content">
-			<ul class="list">
-				<li>Gelaarsde Kat 3D, De</li>
-				<li>New Kids Nitro</li>
-				<li>Happy Feet 2 3D, NL</li>
-				<li>Het geheim van de Eenhoorn</li>
-				<li>Mission: Impossible - Ghost Protocol</li>
-				<li>Sherlock Holmes 2</li>
-				<li>Gelaarsde Kat 3D, De</li>
-				<li>New Kids Nitro</li>
-				<li>Happy Feet 2 3D, NL</li>
-				<li>Het geheim van de Eenhoorn</li>
-				<li>Mission: Impossible - Ghost Protocol</li>
-				<li>Sherlock Holmes 2</li>
-				<li>Gelaarsde Kat 3D, De</li>
-				<li>New Kids Nitro</li>
-				<li>Happy Feet 2 3D, NL</li>
-				<li>Het geheim van de Eenhoorn</li>
-				<li>Mission: Impossible - Ghost Protocol</li>
-				<li>Sherlock Holmes 2</li>
-				<li>Gelaarsde Kat 3D, De</li>
-				<li>New Kids Nitro</li>
-				<li>Happy Feet 2 3D, NL</li>
-				<li>Het geheim van de Eenhoorn</li>
-				<li>Mission: Impossible - Ghost Protocol</li>
-				<li>Sherlock Holmes 2</li>
-			</ul>
+			<div class="scrollable">
+				<ul class="list">
+					<li>Nederland</li>
+					<li>RTL Gemist</li>
+					<li>SBS6 Gemist</li>
+					<li>Net 5 Gemist</li>
+					<li>Veronica Gemist</li>
+					<li>13th Street</li>
+					<li>Syfy</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="ondemand-template">
+		<h1>On Demand</h1>
+		<nav id="inner-nav">
+			<a href="#list">List</a>
+			<a href="#search">Search</a>
+		</nav>
+
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="list">
+					<li>Gelaarsde Kat 3D, De</li>
+					<li>New Kids Nitro</li>
+					<li>Happy Feet 2 3D, NL</li>
+					<li>Het geheim van de Eenhoorn</li>
+					<li>Mission: Impossible - Ghost Protocol</li>
+					<li>Sherlock Holmes 2</li>
+					<li>Gelaarsde Kat 3D, De</li>
+					<li>New Kids Nitro</li>
+					<li>Happy Feet 2 3D, NL</li>
+					<li>Het geheim van de Eenhoorn</li>
+					<li>Mission: Impossible - Ghost Protocol</li>
+					<li>Sherlock Holmes 2</li>
+					<li>Gelaarsde Kat 3D, De</li>
+					<li>New Kids Nitro</li>
+					<li>Happy Feet 2 3D, NL</li>
+					<li>Het geheim van de Eenhoorn</li>
+					<li>Mission: Impossible - Ghost Protocol</li>
+					<li>Sherlock Holmes 2</li>
+					<li>Gelaarsde Kat 3D, De</li>
+					<li>New Kids Nitro</li>
+					<li>Happy Feet 2 3D, NL</li>
+					<li>Het geheim van de Eenhoorn</li>
+					<li>Mission: Impossible - Ghost Protocol</li>
+					<li>Sherlock Holmes 2</li>
+				</ul>
+			</div>
 		</div>
 	</script>
 
 	<script type="text/template" id="more-template">
 		<h1>More</h1>
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="selectable-list">
+					<li><a href="#more/account">Account</a></li>
+					<li><a href="#more/mediabox">Mediabox</a></li>
+					<li><a href="#more/favorites">Favorites</a></li>
+					<li><a href="#more/recordings">Recordings</a></li>
+				</ul>
+				<ul class="selectable-list">
+					<li><a href="#more/help">Help</a></li>
+					<li><a href="#more/about">About</a></li>
+					<li><a href="#more/feedback">Feedback</a></li>
+				</ul>
+				<button class="button bordered wide"><a href="#home">Log out</a></button>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="account-template">
+		<h1>Account</h1>
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="selectable-list">
+					<li>
+						<label for="check-email-notification">Email notifications</label>
+						<div class="checkbox">
+							<input id="check-email-notification" name="email-notification" type="checkbox" value="true" checked="checked" />
+							<label for="check-email-notification">Email notifications</label>
+						</div>
+					</li>
+					<li>
+						<label for="check-remember">Remember</label>
+						<div class="checkbox">
+							<input id="check-remember" name="remeber" type="checkbox" value="true" />
+							<label for="check-remember">Remember</label>
+						</div>
+					</li>
+					<li>
+						<label for="email">E-mail:</label>
+						<input name="email" type="text" placeholder="example@upc.com" />
+					</li>
+					<li>
+						<label>Status:</label>
+						<span>Not confirmed</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="mediabox-template">
+		<h1>MediaBox</h1>
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="list">
+					<li>
+						<h4>UPC DVR (Thomson)</h4>
+						<p>SmartCard id: 123749374<br />
+						Features: Record - Set reminders<br />
+						Status: Ready to use</p>
+					</li>
+					<li>
+						<h4>UPC DVR (Thomson)</h4>
+						<p>SmartCard id: 123749374<br />
+						Features: Record - Set reminders<br />
+						Status: Connection error</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="favorites-template">
+		<h1>Favorites</h1>
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="list favorites">
+					<li>
+						<label for="nederland1">
+							<img src="assets/logos/ned1.gif" />
+							<strong>Nederland 1</strong>
+						</label>
+						<div class="favorite">
+							<input id="nederland1" name="nederland1" type="checkbox" value="favorite" checked="checked" />
+							<label for="nederland1">Nederland 1</label>
+						</div>
+					</li>
+					<li>
+						<label for="nederland2">
+							<img src="assets/logos/ned2.gif" />
+							<strong>Nederland 2</strong>
+						</label>
+						<div class="favorite">
+							<input id="nederland2" name="nederland2" type="checkbox" value="favorite" />
+							<label for="nederland2">Nederland 2</label>
+						</div>
+					</li>
+					<li>
+						<label for="nederland3">
+							<img src="assets/logos/ned3.gif" />
+							<strong>Nederland 3</strong>
+						</label>
+						<div class="favorite">
+							<input id="nederland3" name="nederland3" type="checkbox" value="favorite" />
+							<label for="nederland3">Nederland 3</label>
+						</div>
+					</li>
+					<li>
+						<label for="rtl4">
+							<img src="assets/logos/rtl4.gif" />
+							<strong>RTL 4</strong>
+						</label>
+						<div class="favorite">
+							<input id="rtl4" name="rtl4" type="checkbox" value="favorite" checked="checked" />
+							<label for="rtl4">RTL 4</label>
+						</div>
+					</li>
+					<li>
+						<label for="rtl5">
+							<img src="assets/logos/rtl5.gif" />
+							<strong>RTL 5</strong>
+						</label>
+						<div class="favorite">
+							<input id="rtl5" name="rtl5" type="checkbox" value="favorite" />
+							<label for="rtl5">RTL 5</label>
+						</div>
+					</li>
+					<li>
+						<label for="sbs6">
+							<img src="assets/logos/sbs6.gif" />
+							<strong>SBS 6</strong>
+						</label>
+						<div class="favorite">
+							<input id="sbs6" name="sbs6" type="checkbox" value="favorite" />
+							<label for="sbs6">SBS 6</label>
+						</div>
+					</li>
+					<li>
+						<label for="veronica">
+							<img src="assets/logos/veronica.gif" />
+							<strong>Veronica</strong>
+						</label>
+						<div class="favorite">
+							<input id="veronica" name="veronica" type="checkbox" value="favorite" checked="checked" />
+							<label for="veronica">Veronica</label>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="recordings-template">
+		<h1>Recordings</h1>
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="list">
+					<li>
+						<h4>Bold and the Beautiful</h4>
+						<p>Tuesday 24 January 2012 | 18:00 - 19:00</p>
+					</li>
+					<li>
+						<h4>Bold and the Beautiful</h4>
+						<p>Tuesday 24 January 2012 | 18:00 - 19:00</p>
+					</li>
+					<li>
+						<h4>Bold and the Beautiful</h4>
+						<p>Tuesday 24 January 2012 | 18:00 - 19:00</p>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</script>
 
 </body>

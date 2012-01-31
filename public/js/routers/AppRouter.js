@@ -10,10 +10,14 @@ define([
 ,	'views/CatchUp'
 ,	'views/WatchNow'
 ,	'views/More'
+,	'views/more/Account'
+,	'views/more/MediaBox'
+,	'views/more/Favorites'
+,	'views/more/Recordings'
 
 ],
 
-function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, WatchNowView, MoreView) {
+function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, WatchNowView, MoreView, AccountView, MediaBoxView, FavoritesView, RecordingsView) {
 
 	return Backbone.Router.extend({
 
@@ -33,13 +37,18 @@ function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchU
 		// Declaring all app routes here
 		// "someview": "somehandler"
 ,		routes: {
-			"home"			: "home"
-		,	"ondemand"		: "ondemand"
-		,	"catchup"		: "catchup"
-		,	"nowandnext"	: "nowandnext"
-		,	"tvguide"		: "tvguide"
-		,	"watchnow"		: "watchnow"
-		,	"more" 			: "more"
+			"home"				: "home"
+		,	"ondemand"			: "ondemand"
+		,	"catchup"			: "catchup"
+		,	"nowandnext"		: "nowandnext"
+		,	"tvguide"			: "tvguide"
+		,	"watchnow"			: "watchnow"
+		,	"more" 				: "more"
+			,	"more/account"		: "account"
+			,	"more/mediabox"		: "mediabox"
+			,	"more/favorites"	: "favorites"
+			,	"more/recordings"	: "recordings"
+
 		}
 
 ,		home: function() {
@@ -76,6 +85,26 @@ function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchU
 			this.load(MoreView);
 			$('a[href="#more"]').addClass('selected');
 		}
+
+	,		account: function() {
+				this.load(AccountView);
+				$('a[href="#more"]').addClass('selected');
+			}
+
+	,		mediabox: function() {
+				this.load(MediaBoxView);
+				$('a[href="#more"]').addClass('selected');
+			}
+
+	,		favorites: function() {
+				this.load(FavoritesView);
+				$('a[href="#more"]').addClass('selected');
+			}
+
+	,		recordings: function() {
+				this.load(RecordingsView);
+				$('a[href="#more"]').addClass('selected');
+			}
 
 		// Generic view loader
 ,		load: function(View) {

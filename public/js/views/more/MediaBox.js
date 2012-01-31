@@ -1,4 +1,4 @@
-// CatchUp.js
+// MediaBox.js
 
 define([
 
@@ -10,7 +10,7 @@ function() {
 
 		el: $('#main')
 
-,		template: _.template( $('#catchup-template').html() )
+,		template: _.template( $('#mediabox-template').html() )
 
 ,		initialize: function() {
 
@@ -22,10 +22,14 @@ function() {
 
 ,		render: function() {
 
-			this.el.html( this.template() );
+			this.el.html( this.template() )
 
 			// set title
 			$('#header-container h1').html( this.el.find('h1').remove().html() );
+
+			$('#inner-content').addClass('maximize');
+
+			$('.button.back').removeClass('off');
 
 			this.trigger('view-created', this);
 
@@ -38,6 +42,10 @@ function() {
 ,		unload: function() {
 
 			this.iscroll.destroy();
+
+			$('.button.back').addClass('off');
+
+			$('#inner-content').removeClass('maximize');
 
 			this.el.html( '' );
 
