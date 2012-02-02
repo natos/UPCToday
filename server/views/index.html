@@ -28,7 +28,7 @@
 	<div id="header-container" class="off">
 		<header class="wrapper clearfix">
 			<div id="logo">
-				<img src="assets/icon.png">
+				<!--img src="assets/icon.png"-->
 			</div>
 
 			<div class="button bordered back off">
@@ -44,11 +44,11 @@
 
 	<nav id="main-nav" class="off">
 		<ul>
-			<li><a href="#home">Home</a></li>
-			<li><a href="#nowandnext">TV Guide</a></li>
-			<li><a href="#ondemand">On Demand</a></li>
-			<li><a href="#catchup">Catch Up</a></li>
-			<li><a href="#more">More</a></li>
+			<li><a href="#home"><div class="icon"></div>Home</a></li>
+			<li><a href="#nowandnext"><div class="icon"></div>TV Guide</a></li>
+			<li><a href="#ondemand"><div class="icon"></div>On Demand</a></li>
+			<li><a href="#catchup"><div class="icon"></div>Catch Up</a></li>
+			<li><a href="#more"><div class="icon"></div>More</a></li>
 		</ul>
 	</nav>
 
@@ -292,16 +292,20 @@
 							<label for="check-email-notification">Email notifications</label>
 						</div>
 					</li>
+				</ul>
+				<ul class="selectable-list">
 					<li>
 						<label for="check-remember">Remember</label>
 						<div class="checkbox">
-							<input id="check-remember" name="remeber" type="checkbox" value="true" />
+							<input id="check-remember" name="remeber" type="checkbox" value="true">
 							<label for="check-remember">Remember</label>
 						</div>
 					</li>
+				</ul>
+				<ul class="selectable-list">
 					<li>
 						<label for="email">E-mail:</label>
-						<input name="email" type="text" placeholder="example@upc.com" />
+						<input name="email" type="text" placeholder="example@upc.com">
 					</li>
 					<li>
 						<label>Status:</label>

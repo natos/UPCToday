@@ -10,10 +10,10 @@ audio:not([controls]) { display: none; }
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
-
+/*
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
-
+*/
 a { color: #00e; }
 a:visited { color: #551a8b; }
 a:hover { color: #06e; }
@@ -70,18 +70,31 @@ td { vertical-align: top; }
 
 body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-color: #000;	 }
 
+* {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
 /* ===================
     HEADER
    =================== */
 
 #logo {
-	float: right;
+	position: absolute;
+	top: 4px;
+	right: 6px;
+	width: 35px;
+	height: 35px;
+	background: transparent url(../assets/sprite_1.png) -1px -21px no-repeat;
 }
 
 #logo img {
 	width: 40px;
 	padding: 0;
-	margin: 5px;
+	margin: 0;
 }
 
 #header-container h1 {
@@ -134,41 +147,76 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	-webkit-transition: bottom ease .5s;
 }
 
-#main-nav a {
-	display: block;
-	color:white;
+#main-nav li {
 	font-size: 10px;
-	text-align:center;
-	text-decoration:none;
 	width: 20%;
 	height: 60px;
 	float: left;
+	cursor: pointer;
 }
 
-#main-nav a:hover, #main-nav a:visited{
-	color:white;
+#main-nav a, #main-nav a:hover, #main-nav a:visited{
+	color: #cccccc;
+	text-align:center;
+	text-decoration:none;
+	display: block;
+	margin: 0 auto;
 }
 
-#main-nav a:hover{
-}
-
-#main-nav .selected {
-	background: #0082E5;
+#main-nav a.selected {
+	color: #ffffff;
+	/*background: #0082E5;
 	color: #000;
-
 	background: rgb(153,204,255);
 	background: -moz-linear-gradient(top, rgba(153,204,255,1) 0%, rgba(111,179,247,1) 23%, rgba(26,131,237,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(153,204,255,1)), color-stop(23%,rgba(111,179,247,1)), color-stop(100%,rgba(26,131,237,1)));
 	background: -webkit-linear-gradient(top, rgba(153,204,255,1) 0%,rgba(111,179,247,1) 23%,rgba(26,131,237,1) 100%);
 
-	/*-webkit-box-shadow: 0px 1px 2px 1px #5AD6FC;*/
+	-webkit-box-shadow: 0px 1px 2px 1px #5AD6FC;*/
 }
 
 #main-nav.off {
 	bottom: -65px;
 }
 
+#main-nav a[href="#home"] .icon {
+	background: transparent url(../assets/sprite_1.png) -84px 5px no-repeat;
+	width: 40px;
+	height: 36px;
+	margin: 0 auto;
+}
 
+#main-nav a[href="#nowandnext"] .icon {
+	background: transparent url(../assets/sprite_1.png) -118px 5px no-repeat;
+	width: 36px;
+	height: 36px;
+	margin: 0 auto;
+}
+
+#main-nav a[href="#ondemand"] .icon {
+	background: transparent url(../assets/sprite_1.png) -180px 5px no-repeat;
+	width: 36px;
+	height: 36px;
+	margin: 0 auto;
+}
+
+#main-nav a[href="#catchup"] .icon {
+	background: transparent url(../assets/sprite_1.png) -149px 5px no-repeat;
+	width: 36px;
+	height: 36px;
+	margin: 0 auto;
+}
+
+#main-nav a[href="#more"] .icon {
+	background: transparent url(../assets/sprite_1.png) -218px 5px no-repeat;
+	width: 36px;
+	height: 36px;
+	margin: 0 auto;
+}
+
+#main-nav a.selected .icon {
+	background-position-y: -25px;
+}
 
 /* ==============
     Checkbox 
@@ -179,32 +227,35 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	width: 94px;
 	height: 27px;
 	overflow: hidden;
-	border-radius: 3px;
+	border-radius: 5px;
 }	
 
 input[type="checkbox"] {
 	display: none;
 }
 
-input[type="checkbox"] + label {
+.checkbox input[type="checkbox"] + label {
 	text-indent: -9999px;
 	display: block;
 	width: 150px;
 	height: 27px;
 	line-height: 27px;
+	border-radius: 5px;
 	background: transparent url(../assets/checkbox_sprite.png) no-repeat -56px 0;
 	-webkit-transition: background-position 0.3s ease-in-out;
 	-moz-transition: background-position 0.3s ease-in-out;
 }
 
-input[type="checkbox"]:checked + label {
+.checkbox input[type="checkbox"]:checked + label {
 	-webkit-transition: background-position 0.3s ease-in-out;
 	-moz-transition: background-position 0.3s ease-in-out;
 	background-position: -3px 0;
 }
 
-.selectable-list .checkbox, .selectable-list input[type="text"] {
-	float: right;
+.selectable-list .checkbox {
+	position: absolute;
+	right: 6px;
+	top: 6px;
 }
 
 /* ==============
@@ -214,7 +265,9 @@ input[type="checkbox"]:checked + label {
 input[type=text] {
 	height: 27px;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
+	border: none;
+	width: auto;
 }
 
 /* ==============
@@ -501,23 +554,51 @@ input[type=text] {
    Selectable Fav List
    ============== */
 
-.favorites .favorite {
-	float: right;
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.0);
+	}
+
+	50% {
+		-webkit-transform: scale(1.3);
+	}
+
+	100% {
+		-webkit-transform: scale(1.0);
+	}
 }
 
-.favorites > label {
+.favorites li {
+	position: relative;
+}
+
+.favorites .favorite {
+	position: absolute;
+	right: 16px;
+	top: 16px;
+}
+
+.favorites label {
 	display: block;
 }
 
 .favorite input[type="checkbox"] + label {
+	text-indent: -9999px;
 	display: block;
 	width: 25px; 
 	height: 25px;
 	background: transparent url(../assets/stars_sprite.png) no-repeat -25px 0;
+
+	-webkit-transform: matrix3d(0,0,0);
 }
 
 .favorite input[type="checkbox"]:checked + label {
 	background-position: 0 0;
+
+	-webkit-animation-name: pulse;
+	-webkit-animation-duration: .2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
 }
 
 /* ==============

@@ -29,9 +29,6 @@ function() {
 
 			this.trigger('view-created', this);
 
-			// hide main nav
-			upc.mainNav.unload();
-
 			this.iscroll = new iScroll('inner-content');
 
 			return this;
@@ -43,9 +40,6 @@ function() {
 			this.iscroll.destroy();
 
 			this.el.html( '' );
-
-			// show main nav
-			upc.mainNav.render();
 
 			this.trigger('view-unloaded', this);
 
