@@ -29,11 +29,15 @@ function() {
 
 			this.trigger('view-created', this);
 
+			this.iscroll = new iScroll('inner-content');
+
 			return this;
 
 		}
 
 ,		unload: function() {
+
+			this.iscroll.destroy();
 
 			this.el.html( '' );
 

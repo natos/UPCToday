@@ -179,37 +179,43 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	bottom: -65px;
 }
 
+#main-nav a .icon{
+	background-image: url(../assets/sprite_1.png);
+	background-repeat: none;
+	background-position-y: 5px;
+}
+
 #main-nav a[href="#home"] .icon {
-	background: transparent url(../assets/sprite_1.png) -84px 5px no-repeat;
+	background-position-x: -84px;
 	width: 40px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#nowandnext"] .icon {
-	background: transparent url(../assets/sprite_1.png) -118px 5px no-repeat;
+	background-position-x: -118px;
 	width: 36px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#ondemand"] .icon {
-	background: transparent url(../assets/sprite_1.png) -180px 5px no-repeat;
-	width: 36px;
+	background-position-x: -184px;
+	width: 34px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#catchup"] .icon {
-	background: transparent url(../assets/sprite_1.png) -149px 5px no-repeat;
+	background-position-x: -149px;
 	width: 36px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#more"] .icon {
-	background: transparent url(../assets/sprite_1.png) -218px 5px no-repeat;
-	width: 36px;
+	background-position-x: -218px;
+	width: 40px;
 	height: 36px;
 	margin: 0 auto;
 }
@@ -383,6 +389,50 @@ input[type=text] {
 }
 
 /* ==============
+	logos
+   ============== */
+
+.logo {
+	width: 40px;
+	height: 40px;	
+	background-image: url(../assets/channel_logos_sprite.png);
+	background-repeat: no-repeat;
+	margin: 10px auto;
+}
+
+.sbs6 {
+	background-position: 0 0;
+}
+
+.ned1 {
+	background-position: -44px 0;
+}
+
+.ned2 {
+	background-position: -90px 0;
+}
+
+.ned3 {
+	background-position: -134px 0;
+}
+
+.rtl4 {
+	background-position: -74px -41px;
+	width: 50px;
+}
+
+.rtl5 {
+	background-position: -126px -41px;
+	width: 50px;
+}
+
+.veronica {
+	background-position: 0px -41px;
+	width: 73px;
+}
+
+
+/* ==============
     inner nav
    ============== */
 
@@ -428,14 +478,6 @@ input[type=text] {
 	-webkit-box-shadow: inset 0px 1px 1px 0px #555	;
 }
 
-#inner-nav a[href="#list"] {
-	left: 10px;
-	text-indent: 14px;
-}
-
-#inner-nav a[href="#search"] {
-	right: 10px;
-}
 
 #inner-nav a[href="#tvguide"] {
 	left: 10px;
@@ -444,6 +486,7 @@ input[type=text] {
 
 #inner-nav input[type="search"] {
 	font-size: .8em;
+	text-indent: 20px;
 	margin: 10px;
 	padding: 3px;
 	width: 93%;
@@ -454,6 +497,38 @@ input[type=text] {
 	background: -moz-linear-gradient(top, rgba(239,239,239,1) 0%, rgba(255,255,255,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,239,239,1)), color-stop(100%,rgba(255,255,255,1)));
 	background: -webkit-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(255,255,255,1) 100%);
+}
+
+#inner-nav a[href="#list"] {
+	left: 10px;
+	text-indent: 14px;
+}
+
+#inner-nav .search-icon {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background: transparent url(../assets/sprite_1.png) -40px 0 no-repeat;
+	text-indent: -999999px;
+	width: 19px;
+	height: 20px;
+}
+
+#inner-nav a.search-icon {
+	top: 15px;
+	right: 15px;
+	text-indent: -999999px;
+	border: none;
+	-webkit-box-shadow: none;
+}
+
+#inner-nav .search-icon:hover {
+	-webkit-box-shadow: none;
+}
+
+#inner-nav a[href="#search"].search-icon {
+	right: 20px;
+	left: auto;
 }
 
 #inner-content {
@@ -548,6 +623,15 @@ input[type=text] {
 	background: -moz-linear-gradient(top, rgba(153,204,255,1) 0%, rgba(111,179,247,1) 23%, rgba(26,131,237,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(153,204,255,1)), color-stop(23%,rgba(111,179,247,1)), color-stop(100%,rgba(26,131,237,1)));
 	background: -webkit-linear-gradient(top, rgba(153,204,255,1) 0%,rgba(111,179,247,1) 23%,rgba(26,131,237,1) 100%);
+}
+
+.selectable-list .arrow {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: transparent url(../assets/sprite_1.png) -59px -1px no-repeat;
+	width: 13px;
+	height: 20px;
 }
 
 /* ==============
@@ -699,6 +783,14 @@ input[type=text] {
 .detailed-list dd {
 	margin: 0 0 5px 70px;
 	padding: 10px 0;
+}
+
+.detailed-list .logo {
+	margin: 0 auto;
+}
+
+.detailed-list .veronica.logo  {
+	/* change background size? */
 }
 
 /* ===================
