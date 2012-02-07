@@ -29,7 +29,10 @@ function() {
 
 			this.trigger('view-created', this);
 
-			this.iscroll = new iScroll('inner-content');
+			var scroll = this.iscroll = new iScroll('inner-content');
+			setTimeout(function () {
+				scroll.refresh();
+			}, 0);
 
 			// hide main nav
 			upc.mainNav.unload();

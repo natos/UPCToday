@@ -52,7 +52,7 @@ table button, table input { *overflow: auto; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+/*input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }*/
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
 input:valid, textarea:valid {  }
@@ -78,17 +78,21 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	user-select: none;
 }
 
+*:focus {
+	outline: none;
+}
+
 /* ===================
     HEADER
    =================== */
 
 #logo {
 	position: absolute;
-	top: 4px;
-	right: 6px;
+	top: 5px;
+	right: 10px;
 	width: 35px;
-	height: 35px;
-	background: transparent url(../assets/sprite_1.png) -1px -21px no-repeat;
+	height: 37px;
+	background: transparent url(../assets/sprite_1.png) -7px -25px no-repeat;
 }
 
 #logo img {
@@ -133,7 +137,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
    ============== */
 
 #main-nav {
-	z-index: 10;
+	z-index: 100;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -182,46 +186,46 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 #main-nav a .icon{
 	background-image: url(../assets/sprite_1.png);
 	background-repeat: none;
-	background-position-y: 5px;
+	background-position-y: -10px;
 }
 
 #main-nav a[href="#home"] .icon {
-	background-position-x: -84px;
+	background-position-x: -72px;
 	width: 40px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#nowandnext"] .icon {
-	background-position-x: -118px;
+	background-position-x: -107px;
 	width: 36px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#ondemand"] .icon {
-	background-position-x: -184px;
+	background-position-x: -172px;
 	width: 34px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#catchup"] .icon {
-	background-position-x: -149px;
+	background-position-x: -140px;
 	width: 36px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a[href="#more"] .icon {
-	background-position-x: -218px;
+	background-position-x: -208px;
 	width: 40px;
 	height: 36px;
 	margin: 0 auto;
 }
 
 #main-nav a.selected .icon {
-	background-position-y: -25px;
+	background-position-y: -48px;
 }
 
 /* ==============
@@ -438,9 +442,9 @@ input[type=text] {
 
 #inner-nav {
 	position: absolute;
-	height: 50px;
+	height: 40px;
 	width: 100%;
-	z-index: 12;
+	z-index: 120;
 
 	-webkit-box-shadow: 0px 1px 6px 2px #666666;
 
@@ -461,7 +465,7 @@ input[type=text] {
 	text-indent: 5px;
 	font-size: .8em;
 
-	top: 12px;
+	top: 8px;
 	width: 50px;
 
 	border-radius: 20px;
@@ -485,13 +489,11 @@ input[type=text] {
 }
 
 #inner-nav input[type="search"] {
-	font-size: .8em;
-	text-indent: 20px;
-	margin: 10px;
-	padding: 3px;
-	width: 93%;
-	height: 22px;
-	border-radius: 22px;
+	font-size: 1em;
+	margin: 8px 2.5%;
+	padding: .5%;
+	width: 95%;
+	border-radius: 1em;
 	border: 1px solid #aaa;
 	background: rgb(239,239,239);
 	background: -moz-linear-gradient(top, rgba(239,239,239,1) 0%, rgba(255,255,255,1) 100%);
@@ -499,14 +501,55 @@ input[type=text] {
 	background: -webkit-linear-gradient(top, rgba(239,239,239,1) 0%,rgba(255,255,255,1) 100%);
 }
 
-#inner-nav a[href="#list"] {
+#inner-nav input[type="search"]::-webkit-input-placeholder { 
+	text-indent: 1.5em;
+}
+
+#inner-nav input[type="search"]:focus {
+	border: 1px solid #0082E5;
+	-webkit-box-shadow: inset 0px 0px 2px 0px #0082E5;
+
+}
+
+#inner-nav a[href="#tile"] {
 	left: 10px;
 	text-indent: 14px;
 }
 
+#inner-nav a[href="#tile"].tile-icon {
+	text-indent: -999999px;
+	width: 40px;
+}
+
+#inner-nav a[href="#list"],
+#inner-nav a[href="#tile"] {
+	left: 10px;
+	text-indent: 14px;
+}
+
+#inner-nav a[href="#list"].list-icon,
+#inner-nav a[href="#tile"].tile-icon {
+	text-indent: -999999px;
+	width: 40px;
+}
+
+#inner-nav a[href="#list"].list-icon .icon,
+#inner-nav a[href="#tile"].tile-icon .icon {
+	position: absolute;
+	left: 10px;
+	top: 3px;
+	width: 19px;
+	height: 18px;
+	background: transparent url(../assets/sprite_1.png) -35px -72px no-repeat;
+}
+
+#inner-nav a[href="#tile"].tile-icon .icon {
+	background-position-x: -53px;
+}
+
 #inner-nav .search-icon {
 	position: absolute;
-	top: 15px;
+	top: 10px;
 	left: 15px;
 	background: transparent url(../assets/sprite_1.png) -40px 0 no-repeat;
 	text-indent: -999999px;
@@ -515,8 +558,8 @@ input[type=text] {
 }
 
 #inner-nav a.search-icon {
-	top: 15px;
-	right: 15px;
+	top: 10px;
+	right: 10px;
 	text-indent: -999999px;
 	border: none;
 	-webkit-box-shadow: none;
@@ -534,11 +577,11 @@ input[type=text] {
 #inner-content {
 	background-color: #ccc;
 	position: absolute;
-	top: 50px;
+	top: 40px;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	z-index: 5;
+	z-index: 10;
 }
 
 #inner-content.maximize {
@@ -547,7 +590,8 @@ input[type=text] {
 
 #inner-content .button.wide {
 	display: block;
-	margin: 5px 15px;
+	width: 95%;
+	margin: 2% 2.5%;
 }
 
 #inner-content .button.wide a {
@@ -629,7 +673,7 @@ input[type=text] {
 	position: absolute;
 	right: 10px;
 	top: 10px;
-	background: transparent url(../assets/sprite_1.png) -59px -1px no-repeat;
+	background: transparent url(../assets/sprite_1.png) -8px -70px no-repeat;
 	width: 13px;
 	height: 20px;
 }
@@ -652,7 +696,33 @@ input[type=text] {
 	}
 }
 
+.favorites .logo {
+	margin: 0;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+.favorites strong {
+	margin-left: 50px;
+}
+
+.favorites .rtl4, 
+.favorites .rtl5 {
+	top: 8px;
+}
+
+.favorites .rtl4 + strong, 
+.favorites .rtl5 + strong {
+	margin-left: 60px;
+}
+
+.favorites .veronica + strong {
+	margin-left: 80px;
+}
+
 .favorites li {
+	display: block;
 	position: relative;
 }
 
@@ -669,20 +739,21 @@ input[type=text] {
 .favorite input[type="checkbox"] + label {
 	text-indent: -9999px;
 	display: block;
-	width: 25px; 
-	height: 25px;
-	background: transparent url(../assets/stars_sprite.png) no-repeat -25px 0;
+	width: 22px; 
+	height: 22px;
+	background: transparent url(../assets/sprite_1.png) -20px 0px no-repeat;
 
-	-webkit-transform: matrix3d(0,0,0);
+	-webkit-transform: translate3d(0px, 0px, 0px) scale(1);
 }
 
 .favorite input[type="checkbox"]:checked + label {
-	background-position: 0 0;
+
+	background-position: 1px 0;
 
 	-webkit-animation-name: pulse;
 	-webkit-animation-duration: .2s;
 	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;/**/
 }
 
 /* ==============
@@ -690,6 +761,7 @@ input[type=text] {
    ============== */
 
 #damero {
+	font-size: .8em;
 	margin: 5px;
 	color: #eee;
 	background: #000;
@@ -706,60 +778,71 @@ input[type=text] {
     text-shadow: 0 -1px 0 rgba(0,0,0, 0.4);
 }
 
-#damero a:active {
+#damero a:hover {
 	color: #fff;
 }
 
-#damero a:hover {
+#damero a:active {
 	color: #0082E5;
 }
 
 #damero ul {
 	margin: 5px;
 	padding: 0;
-
-	background: rgb(102,102,102);
-	background: -moz-radial-gradient(center, ellipse cover, rgba(102,102,102,1) 0%, rgba(0,0,0,1) 100%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(102,102,102,1)), color-stop(100%,rgba(0,0,0,1)));
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(102,102,102,1) 0%,rgba(0,0,0,1) 100%);
-
-	background-position-y: -155px;
-	background-repeat: no-repeat;
 }
 
 #damero li {
 	color: #ccc;
-	width: 42%;
-	height: 130px;
+
+	width: 48.5%;
+	height: 150px;
+
 	float: left;
 	list-style: none;
-	border: 2px solid #333;
-	padding: 10px;
-	background-color: rgba(30,30,30,.5);
+	border: 0; /*2px solid #333;*/
+	padding: 0px;
+	margin: 1%;
+
+	border-radius: 10px;
+
+	background: rgb(85,85,85);
+	background: -moz-linear-gradient(top, rgba(51,51,51,1) 0%, rgba(0,0,0,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(51,51,51,1)), color-stop(100%,rgba(0,0,0,1)));
+	background: -webkit-linear-gradient(top,  rgba(51,51,51,1) 0%,rgba(0,0,0,1) 100%);
+
 }
 
 #damero li:hover {
-	border: 2px solid #444;	
+	/*border: 2px solid #444;*/
 }
 
-/** rounded corners */
-
-#damero .tl {
-	-webkit-border-top-left-radius: 15px;
+#damero .icon {
+	width: 70px;
+	height: 70px;
+	background-image: url(../assets/icons_sprite.png);
+	margin: 20px auto;
 }
 
-#damero .tr {
-	-webkit-border-top-right-radius: 15px;
+#damero a:hover .icon {
+	background-position-y: -70px;
 }
 
-#damero .bl {
-	-webkit-border-bottom-left-radius: 15px;
+#damero .schedule .icon {
+	background-position-x: 0px;
 }
 
-#damero .br {
-	-webkit-border-bottom-right-radius: 15px;
+#damero .watchnow .icon {
+	width: 85px;
+	background-position-x: -76px;
 }
 
+#damero .search .icon {
+	background-position-x: -236px;
+}
+
+#damero .werecommend .icon {
+	background-position-x: -168px;
+}
 
 /* ===================
     Now and Next
@@ -868,43 +951,84 @@ input[type=text] {
 .clearfix { zoom: 1; }
 
 
-/* ==|== media queries ====================================================== */
+/* ==|== media queries ====================================================== 
 
-@media only screen and (min-width: 480px) {
+	===== Screen size range =====
 
-/* ====================
-    INTERMEDIATE: Menu
-   ==================== */
+	768 x 1024 (iPad)
+	320 x 480 (iPhone, iPod Touch, Samsung Galaxy Ace, Samsung Galaxy Gio, HTC Wildfire S)
+	480 x 800 (Samsung Galaxy S, Samsung Galaxy S II, Samsung Galaxy S Plus, HTC Desire, HTC Desire S)
+	1280 x 800 (Samsung Galaxy Tab, Samsung Galaxy Note, Acer Iconia Tab)
+	240 x 320 (HTC Wildfire, Samsung Galaxy Mini, Samsung Galaxy Y)
 
-	nav a{
+	===== Screen size range =====
 
-	}
-	
-	
-/* ========================
-    INTERMEDIATE: IE Fixes
-   ======================== */
+	Micro (< 320px wide)
+	Medium Smartphone(320px - 479px wide)
+	Large Smartphone (480px - 640px wide)
+	Tablet (> 640px wide)	
 
-	nav ul li {
+*/
 
-	}	
-	.oldie nav a{
-		margin:0 0.7%;		
+/* 
+
+Hardboiled CSS3 Media Queries by Andy Clarke:
+http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
+
+Author: Andy Clarke
+Web site: http://stuffandnonsense.co.uk
+Twitter: http://twitter.com/malarkey
+
+Hardboiled Web Design
+Web site: http://hardboiledwebdesign.com
+Twitter: http://twitter.com/itshardboiled
+
+Version date : 30th September 2010
+Version: 0.9
+
+License: Creative Commons CC Zero Declaration. No Rights Reserved.
+
+*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+
+	#main-nav {
+		top: 50px;
+		z-index: 0;
+		bottom: auto;
 	}
 }
 
-@media only screen and (min-width: 768px) {
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
 
-/* ====================
-    WIDE: CSS3 Effects
-   ==================== 
-
-	#header-container {
-		-webkit-box-shadow:0 5px 10px #aaa;
-		   -moz-box-shadow:0 5px 10px #aaa;
-		        box-shadow:0 5px 10px #aaa;
-	}*/
-
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+/* Styles */
 /* ============
     WIDE: Menu
    ============ */
@@ -943,11 +1067,10 @@ input[type=text] {
 	#damero li {
 		width: 47%;
 	}
-
 }
 
-@media only screen and (min-width: 1140px) {
-
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
 /* ===============
     Maximal Width
    =============== */
@@ -962,7 +1085,13 @@ input[type=text] {
 	#damero li {
 		width: 47.7%;
 	}
+}
 
+/* iPhone 4 and high pixel ratio devices ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
 }
 
 /* ==|== print styles ======================================================= */

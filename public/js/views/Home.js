@@ -31,12 +31,18 @@ function() {
 
 			// hide back button
 			$('.back.button').addClass('off');
+			// black background
+			$('#inner-content').css('background', 'transparent');
+
+			this.iscroll = new iScroll('inner-content');
 
 			return this;
 
 		}
 
 ,		unload: function() {
+
+			this.iscroll.destroy();
 
 			this.el.html( '' );
 
