@@ -24,9 +24,10 @@ function(AppRouter) {
 			,	t = sprites.length;
 
 			for (i; i < t; i++) {
-				preload['sprite'+i] = new Image();
-				preload['sprite'+i].src = "/assets/" + sprites[i];
+//				preload['sprite'+i] = new Image();
+//				preload['sprite'+i].src = "/assets/" + sprites[i];
 			}
+			// end preload
 
 			// Socket.io connection to the backend
 			//upc.socket = io.connect();

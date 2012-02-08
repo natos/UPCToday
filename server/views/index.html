@@ -183,6 +183,23 @@
 		</div>
 	</script>
 
+	<script type="text/template" id="categoryselector-template">
+		<div id="dimmer"></div>
+		<div id="modal">
+			<ul class="selectable-list">
+				<li>Select a category <a href="#close">close</a></li>
+				<li>Action</li>
+				<li>Adventure</li>
+				<li>Drama</li>
+				<li>Family & Kids</li>
+				<li>Arthouse</li>
+				<li>HD & 3D</li>
+				<li>Horror</li>
+				<li>Comedy</li>
+			</ul>
+		</div>
+	</script>
+
 	<script type="text/template" id="nowandnext-template">
 		<h1>Now And Next</h1>
 		<nav id="inner-nav">
@@ -242,12 +259,22 @@
 		<h1>TV Guide</h1>
 		<nav id="inner-nav">
 			<a href="#list" class="list-icon"><div class="asset" />List</a>
+			<select>
+				<option label="Vandaag" selected="selected">Vandaag</option>
+				<option label="Maandag">Maandag</option>
+				<option label="Dinsdag">Dinsdag</option>
+				<option label="Woensdag">Woensdag</option>
+				<option label="Dondergag">Donderdag</option>
+				<option label="Vrijdag">Vrijdag</option>
+				<option label="Zaterdag">Zaterdag</option>
+				<option label="Zondag">Zondag</option>
+			</select>
 			<a href="#search/tvguide" class="search asset">Search</a>
 		</nav>
 
 		<div id="inner-content">
 			<div class="scrollable">
-				<ul class="list">
+				<ul class="grid">
 					<li>Gelaarsde Kat 3D, De</li>
 					<li>New Kids Nitro</li>
 					<li>Happy Feet 2 3D, NL</li>

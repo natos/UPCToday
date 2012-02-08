@@ -157,7 +157,7 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
    ============== */
 
 #main-nav {
-	z-index: 100;
+	z-index: 30;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -472,7 +472,7 @@ input[type=text] {
 	background: -webkit-linear-gradient(top, rgba(204,204,204,1) 0%,rgba(170,170,170,1) 100%);
 }
 
-#inner-nav a {
+#inner-nav a, #inner-nav select {
 
 	display: block;
 	position: absolute;
@@ -496,10 +496,17 @@ input[type=text] {
 	-webkit-box-shadow: inset 0px 1px 1px 0px #666;
 }
 
-#inner-nav a:hover {
+#inner-nav a:hover, #inner-nav select:hover {
 	-webkit-box-shadow: inset 0px 1px 1px 0px #555	;
 }
 
+#inner-nav select {
+	border: 1px solid #aaa;
+	width: 100px;
+	height: 25px;
+	left: 110px;
+	font-size: 1em;
+}
 
 #inner-nav a[href="#tvguide"] {
 	left: 10px;
@@ -598,13 +605,12 @@ input[type=text] {
 }
 
 #inner-nav a[href="#select-category"] .asset {
-	/* TODO: add new image to the sprite file */
 	position: absolute;
 	left: 10px;
 	top: 3px;
 	width: 18px;
 	height: 18px;
-	background-position: -35px -72px;
+	background-position: -58px -1px;
 }
 
 #inner-nav input[type="radio"] {
@@ -659,15 +665,15 @@ input[type=text] {
 #inner-nav input[type="radio"]#provider-check + label {
 	top: 8px;
 	left: 60px;
-	width: 60px;
+	width: 70px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
 }
 
 #inner-nav input[type="radio"]#day-check + label {
 	top: 8px;
-	left: 120px;
-	width: 60px;
+	left: 130px;
+	width: 50px;
 	border-radius: 0px;
 }
 
@@ -995,6 +1001,47 @@ input[type=text] {
 }
 
 /* ===================
+    Search
+   =================== */
+
+#category-selector {
+	z-index: 40;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+#dimmer {
+	position: absolute;
+	background: black;
+	opacity: .5;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+
+#modal {
+	position: absolute;
+	top: 50px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
+#modal .selectable-list {
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 1px 6px 2px #333333;
+}
+
+#modal a[href="#close"] {
+	float: right;
+}
+
+/* ===================
     Watch Now
    =================== */
 
@@ -1134,7 +1181,7 @@ License: Creative Commons CC Zero Declaration. No Rights Reserved.
 
 	#main-nav {
 		top: 50px;
-		z-index: 10;
+		z-index: 30;
 		bottom: auto;
 	}
 }
@@ -1163,7 +1210,7 @@ License: Creative Commons CC Zero Declaration. No Rights Reserved.
 
 	#main-nav {
 		top: 50px;
-		z-index: 10;
+		z-index: 30;
 		bottom: auto;
 	}
 
