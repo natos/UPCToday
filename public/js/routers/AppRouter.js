@@ -4,6 +4,7 @@ define([
 
 	'views/Home'
 ,	'views/MainNav'
+,	'views/Search'
 ,	'views/TVGuide'
 ,	'views/NowAndNext'
 ,	'views/OnDemand'
@@ -17,7 +18,7 @@ define([
 
 ],
 
-function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, WatchNowView, MoreView, AccountView, MediaBoxView, FavoritesView, RecordingsView) {
+function(HomeView, MainNavView, SearchView, TVGuideView, NowAndNextView, OnDemanView, CatchUpView, WatchNowView, MoreView, AccountView, MediaBoxView, FavoritesView, RecordingsView) {
 
 	return Backbone.Router.extend({
 
@@ -38,6 +39,9 @@ function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchU
 		// "someview": "somehandler"
 ,		routes: {
 			"home"				: "home"
+		,	"search"			: "search"
+			,	"search/ondemand"	: "search-ondemand"
+			,	"search/tvguide"	: "search-tvguide"
 		,	"ondemand"			: "ondemand"
 		,	"catchup"			: "catchup"
 		,	"nowandnext"		: "nowandnext"
@@ -55,6 +59,21 @@ function(HomeView, MainNavView, TVGuideView, NowAndNextView, OnDemanView, CatchU
 			this.load(HomeView);
 			$('a[href="#home"]').addClass('selected');
 		}
+
+,		search: function() {
+			this.load(SearchView);
+			$('a[href="#search"]').addClass('selected');
+		}
+
+	,		"search-ondemand": function() {
+				this.load(SearchView);
+				$('a[href="#ondemand"]').addClass('selected');
+			}
+
+	,		"search-tvguide": function() {
+				this.load(SearchView);
+				$('a[href="#tvguide"]').addClass('selected');
+			}
 
 ,		ondemand: function() {
 			this.load(OnDemanView);

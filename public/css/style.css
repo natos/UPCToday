@@ -52,7 +52,7 @@ table button, table input { *overflow: auto; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-/*input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }*/
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
 input:valid, textarea:valid {  }
@@ -82,6 +82,23 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	outline: none;
 }
 
+
+/* ===================
+    sprites
+   =================== */
+
+.asset {
+	background-image: url(../assets/sprite_1.png)!important;
+}
+
+.channel {
+	
+}
+
+.icon {
+	
+}
+
 /* ===================
     HEADER
    =================== */
@@ -92,7 +109,10 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	right: 10px;
 	width: 35px;
 	height: 37px;
-	background: transparent url(../assets/sprite_1.png) -7px -25px no-repeat;
+	background-color: transparent;
+	background-position: -7px -25px;
+	background-repeat: no-repeat;
+/*	background: transparent url(../assets/sprite_1.png) -7px -25px no-repeat; */
 }
 
 #logo img {
@@ -183,48 +203,46 @@ body{ font:16px/24px Helvetica, Helvetica Neue, Arial, sans-serif; background-co
 	bottom: -65px;
 }
 
-#main-nav a .icon{
-	background-image: url(../assets/sprite_1.png);
-	background-repeat: none;
+#main-nav a .asset {
 	background-position-y: -10px;
 }
 
-#main-nav a[href="#home"] .icon {
+#main-nav a[href="#home"] .asset {
 	background-position-x: -72px;
 	width: 40px;
 	height: 36px;
 	margin: 0 auto;
 }
 
-#main-nav a[href="#nowandnext"] .icon {
+#main-nav a[href="#nowandnext"] .asset {
 	background-position-x: -107px;
 	width: 36px;
 	height: 36px;
 	margin: 0 auto;
 }
 
-#main-nav a[href="#ondemand"] .icon {
+#main-nav a[href="#ondemand"] .asset {
 	background-position-x: -172px;
 	width: 34px;
 	height: 36px;
 	margin: 0 auto;
 }
 
-#main-nav a[href="#catchup"] .icon {
+#main-nav a[href="#catchup"] .asset {
 	background-position-x: -140px;
 	width: 36px;
 	height: 36px;
 	margin: 0 auto;
 }
 
-#main-nav a[href="#more"] .icon {
+#main-nav a[href="#more"] .asset {
 	background-position-x: -208px;
 	width: 40px;
 	height: 36px;
 	margin: 0 auto;
 }
 
-#main-nav a.selected .icon {
+#main-nav a.selected .asset {
 	background-position-y: -48px;
 }
 
@@ -245,7 +263,7 @@ input[type="checkbox"] {
 }
 
 .checkbox input[type="checkbox"] + label {
-	text-indent: -9999px;
+	text-indent: -999px;
 	display: block;
 	width: 150px;
 	height: 27px;
@@ -444,7 +462,7 @@ input[type=text] {
 	position: absolute;
 	height: 40px;
 	width: 100%;
-	z-index: 120;
+	z-index: 20;
 
 	-webkit-box-shadow: 0px 1px 6px 2px #666666;
 
@@ -508,17 +526,11 @@ input[type=text] {
 #inner-nav input[type="search"]:focus {
 	border: 1px solid #0082E5;
 	-webkit-box-shadow: inset 0px 0px 2px 0px #0082E5;
-
 }
 
 #inner-nav a[href="#tile"] {
 	left: 10px;
 	text-indent: 14px;
-}
-
-#inner-nav a[href="#tile"].tile-icon {
-	text-indent: -999999px;
-	width: 40px;
 }
 
 #inner-nav a[href="#list"],
@@ -529,49 +541,142 @@ input[type=text] {
 
 #inner-nav a[href="#list"].list-icon,
 #inner-nav a[href="#tile"].tile-icon {
-	text-indent: -999999px;
-	width: 40px;
+	text-indent: -999px;
+	width: 38px;
 }
 
-#inner-nav a[href="#list"].list-icon .icon,
-#inner-nav a[href="#tile"].tile-icon .icon {
+#inner-nav a[href="#list"].list-icon .asset,
+#inner-nav a[href="#tile"].tile-icon .asset {
 	position: absolute;
 	left: 10px;
 	top: 3px;
 	width: 19px;
 	height: 18px;
-	background: transparent url(../assets/sprite_1.png) -35px -72px no-repeat;
+	background-position: -35px -72px;
 }
 
-#inner-nav a[href="#tile"].tile-icon .icon {
+#inner-nav a[href="#tile"].tile-icon .asset {
 	background-position-x: -53px;
 }
 
-#inner-nav .search-icon {
+#inner-nav .search {
 	position: absolute;
 	top: 10px;
 	left: 15px;
-	background: transparent url(../assets/sprite_1.png) -40px 0 no-repeat;
-	text-indent: -999999px;
+	background-position: -40px 0;
+/*	background: transparent url(../assets/sprite_1.png) -40px 0 no-repeat; */
+	text-indent: -999px;
+	overflow: hidden;
 	width: 19px;
 	height: 20px;
 }
 
-#inner-nav a.search-icon {
+#inner-nav a.search {
 	top: 10px;
 	right: 10px;
-	text-indent: -999999px;
+	text-indent: -999px;
+	overflow: hidden;
 	border: none;
 	-webkit-box-shadow: none;
 }
 
-#inner-nav .search-icon:hover {
+#inner-nav .search:hover {
 	-webkit-box-shadow: none;
 }
 
-#inner-nav a[href="#search"].search-icon {
-	right: 20px;
+#inner-nav a[href^="#search"].search {
+	right: 10px;
 	left: auto;
+}
+
+#inner-nav a[href="#select-category"] {
+	top: 38px;
+	right: 5px;
+	width: 38px;
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+#inner-nav a[href="#select-category"] .asset {
+	/* TODO: add new image to the sprite file */
+	position: absolute;
+	left: 10px;
+	top: 3px;
+	width: 18px;
+	height: 18px;
+	background-position: -35px -72px;
+}
+
+#inner-nav input[type="radio"] {
+	display: none;
+}
+
+#inner-nav input[type="radio"] + label {
+	display: block;
+	position: absolute;
+
+	color: white;
+	text-align: center;
+	text-decoration: none;
+
+	text-indent: 0;
+	font-size: .8em;
+
+	top: 38px;
+	left: 10px;
+	width: 130px;
+	
+	cursor: pointer;
+
+	border-radius: 20px;
+
+	background: rgb(170,170,170);
+	background: -moz-linear-gradient(top, rgba(170,170,170,1) 0%, rgba(102,102,102,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(170,170,170,1)), color-stop(100%,rgba(102,102,102,1)));
+	background: -webkit-linear-gradient(top, rgba(170,170,170,1) 0%,rgba(102,102,102,1) 100%);
+
+	-webkit-box-shadow: inset 0px 1px 1px 0px #666;
+}
+
+#inner-nav input[type="radio"]:checked + label {
+	background: rgb(17,17,17);
+	background: -moz-linear-gradient(top, rgba(17,17,17,1) 0%, rgba(51,51,51,1) 23%, rgba(102,102,102,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(17,17,17,1)), color-stop(23%,rgba(51,51,51,1)), color-stop(100%,rgba(102,102,102,1)));
+	background: -webkit-linear-gradient(top, rgba(17,17,17,1) 0%,rgba(51,51,51,1) 23%,rgba(102,102,102,1) 100%);
+}
+
+#inner-nav input[type="radio"]#tvguide-check + label {
+	left: 140px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+#inner-nav input[type="radio"]#ondemand-check + label {
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+#inner-nav input[type="radio"]#provider-check + label {
+	top: 8px;
+	left: 60px;
+	width: 60px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+#inner-nav input[type="radio"]#day-check + label {
+	top: 8px;
+	left: 120px;
+	width: 60px;
+	border-radius: 0px;
+}
+
+#inner-nav input[type="radio"]#genre-check + label {
+	top: 8px;
+	left: 180px;
+	width: 60px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
 }
 
 #inner-content {
@@ -581,7 +686,7 @@ input[type=text] {
 	bottom: 0;
 	right: 0;
 	left: 0;
-	z-index: 10;
+	z-index: 0;
 }
 
 #inner-content.maximize {
@@ -600,6 +705,17 @@ input[type=text] {
 	text-decoration: none;
 }
 
+/* ==============
+    Search view
+   ============== */
+
+.search #inner-nav {
+	height: 70px;
+}
+
+.search #inner-content { 
+	top: 70px;
+}
 /* ==============
     List Styles
    ============== */
@@ -738,6 +854,8 @@ input[type=text] {
 
 .favorite input[type="checkbox"] + label {
 	text-indent: -9999px;
+	overflow: hidden;
+
 	display: block;
 	width: 22px; 
 	height: 22px;
@@ -1016,7 +1134,7 @@ License: Creative Commons CC Zero Declaration. No Rights Reserved.
 
 	#main-nav {
 		top: 50px;
-		z-index: 0;
+		z-index: 10;
 		bottom: auto;
 	}
 }
@@ -1045,7 +1163,7 @@ License: Creative Commons CC Zero Declaration. No Rights Reserved.
 
 	#main-nav {
 		top: 50px;
-		z-index: 0;
+		z-index: 10;
 		bottom: auto;
 	}
 

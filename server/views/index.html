@@ -28,7 +28,7 @@
 
 	<div id="header-container" class="off">
 		<header class="wrapper clearfix">
-			<div id="logo">
+			<div id="logo" class="asset">
 				<!--img src="assets/icon.png"-->
 			</div>
 
@@ -45,11 +45,11 @@
 
 	<nav id="main-nav" class="off">
 		<ul>
-			<li><a href="#home"><div class="icon"></div>Home</a></li>
-			<li><a href="#nowandnext"><div class="icon"></div>TV Guide</a></li>
-			<li><a href="#ondemand"><div class="icon"></div>On Demand</a></li>
-			<li><a href="#catchup"><div class="icon"></div>Catch Up</a></li>
-			<li><a href="#more"><div class="icon"></div>More</a></li>
+			<li><a href="#home"><div class="asset"></div>Home</a></li>
+			<li><a href="#nowandnext"><div class="asset"></div>TV Guide</a></li>
+			<li><a href="#ondemand"><div class="asset"></div>On Demand</a></li>
+			<li><a href="#catchup"><div class="asset"></div>Catch Up</a></li>
+			<li><a href="#more"><div class="asset"></div>More</a></li>
 		</ul>
 	</nav>
 
@@ -66,6 +66,7 @@
 	};
 	</script>
 	<script src="js/libs/add2home/add2home.js"></script>
+	<!--script src="js/libs/zepto/zepto.min.js"></script-->
 	<script src="js/libs/jquery/jquery.js"></script>
 	<script src="js/libs/underscore/underscore.js"></script>
 	<script src="js/libs/backbone/backbone.js"></script>
@@ -91,7 +92,7 @@
 	<script type="text/template" id="watchnow-template">
 		<h1>Watch Now</h1>
 		<nav id="inner-nav">
-			<div class="search-icon"></div>
+			<div class="search asset"></div>
 			<input type="search" placeholder="Type channel name" name="search" autocomplete="off">
 		</nav>
 
@@ -145,12 +146,48 @@
 		</div>
 	</script>
 
+	<script type="text/template" id="search-template">
+		<h1>Search</h1>
+		<nav id="inner-nav">
+			<form onclick="">
+				<div class="search asset"></div>
+				<input type="search" placeholder="Type channel name" name="search" autocomplete="off">
+				<input type="radio" id="ondemand-check" name="search-mode" value="ondemand">
+				<label for="ondemand-check">On demand</label>
+				<input type="radio" id="tvguide-check" name="search-mode" value="tvguide">
+				<label for="tvguide-check">TV Guide</label>
+				<a href="#select-category"><div class="asset" />Select a category</a>
+			</form>
+		</nav>
+
+		<div id="inner-content">
+			<div class="scrollable">
+				<ul class="list">
+					<li>Bold and the Beautiful</li>
+					<li>RTL Nieuws</li>
+					<li>De Wereld Draait Door</li>
+					<li>Bold and the Beautiful</li>
+					<li>RTL Nieuws</li>
+					<li>De Wereld Draait Door</li>
+					<li>Bold and the Beautiful</li>
+					<li>RTL Nieuws</li>
+					<li>De Wereld Draait Door</li>
+					<li>Bold and the Beautiful</li>
+					<li>RTL Nieuws</li>
+					<li>De Wereld Draait Door</li>
+					<li>Bold and the Beautiful</li>
+					<li>RTL Nieuws</li>
+					<li>De Wereld Draait Door</li>
+				</ul>
+			</div>
+		</div>
+	</script>
 
 	<script type="text/template" id="nowandnext-template">
 		<h1>Now And Next</h1>
 		<nav id="inner-nav">
 			<a href="#tvguide">Go to TV Guide</a>
-			<a href="#search" class="search-icon">Search</a>
+			<a href="#search/tvguide" class="search asset">Search</a>
 		</nav>
 
 		<div id="inner-content">
@@ -204,8 +241,8 @@
 	<script type="text/template" id="tvguide-template">
 		<h1>TV Guide</h1>
 		<nav id="inner-nav">
-			<a href="#list">List</a>
-			<a href="#search" class="search-icon">Search</a>
+			<a href="#list" class="list-icon"><div class="asset" />List</a>
+			<a href="#search/tvguide" class="search asset">Search</a>
 		</nav>
 
 		<div id="inner-content">
@@ -225,8 +262,15 @@
 	<script type="text/template" id="catchup-template">
 		<h1>Catch Up</h1>
 		<nav id="inner-nav">
-			<a href="#list">List</a>
-			<a href="#search" class="search-icon">Search</a>
+			<form onclick="">
+				<input type="radio" id="provider-check" name="catchup" value="provider" checked="checked">
+				<label for="provider-check">Provider</label>
+				<input type="radio" id="day-check" name="catchup" value="day">
+				<label for="day-check">Day</label>
+				<input type="radio" id="genre-check" name="catchup" value="genere">
+				<label for="genre-check">Genre</label>
+				<a href="#search/tvguide" class="search asset">Search</a>
+			</form>
 		</nav>
 
 		<div id="inner-content">
@@ -248,12 +292,12 @@
 		<h1>On Demand</h1>
 		<nav id="inner-nav">
 			<!-- TODO: Create list and tile views for ondemand -->
-			<a href="#tile" class="tile-icon"><div class="icon" />Tile</a>
+			<a href="#tile" class="tile-icon"><div class="asset" />Tile</a>
 			<!-- 
 			#list button#
-				<a href="#list" class="list-icon"><div class="icon" />List</a>
+				<a href="#list" class="list-icon"><div class="asset" />List</a>
 			-->
-			<a href="#search" class="search-icon">Search</a>
+			<a href="#search/ondemand" class="search asset">Search</a>
 		</nav>
 
 		<div id="inner-content">

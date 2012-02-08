@@ -1,4 +1,4 @@
-// NowAndNext.js
+// Search.js
 
 define([
 
@@ -10,7 +10,7 @@ function() {
 
 		el: $('#main')
 
-,		template: _.template( $('#nowandnext-template').html() )
+,		template: _.template( $('#search-template').html() )
 
 ,		initialize: function() {
 
@@ -22,7 +22,7 @@ function() {
 
 ,		render: function() {
 
-			this.el.html( this.template() );
+			this.el.html( this.template() ).addClass('search');
 
 			// set title
 			$('#header-container h1').html( this.el.find('h1').remove().html() );
@@ -32,6 +32,12 @@ function() {
 			var scroll = this.iscroll = new iScroll('inner-content');
 			setTimeout(function () { scroll.refresh(); }, 0);
 
+			// auto select radio
+			var hash = window.location.hash;
+			console.log(hash)
+			if (/ondemand/.test(hash)) { $('#ondemand-check').attr('checked','checked'); }
+			if (/tvguide/.test(hash)) { $('#tvguide-check').attr('checked','checked'); }
+
 			return this;
 
 		}
@@ -40,7 +46,7 @@ function() {
 
 			this.iscroll.destroy();
 
-			this.el.html( '' );
+			this.el.html( '' ).removeClass('search');
 
 			this.trigger('view-unloaded', this);
 
